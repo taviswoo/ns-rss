@@ -1,0 +1,28 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "ns-rss",
+	"compatibility_date": "2025-04-01",
+	"compatibility_flags": [
+		"nodejs_compat"
+	],
+  "main": "./src/index.tsx",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "nodeseeker",
+      "database_id": "ec897a51-a32b-47b6-9823-b8391ceae5b1"
+    }
+  ],
+  "triggers": {
+    "crons": [
+      "*/1 * * * *"
+    ]
+  },
+  "observability": {
+    "enabled": false
+  },
+	"assets": {
+		"directory": "./dist",
+		"not_found_handling": "single-page-application"
+	},
+}
